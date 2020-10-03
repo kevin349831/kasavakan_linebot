@@ -57,7 +57,7 @@ for ($i=0; $i < $CheckLen; $i++) {//suwan
         $i = $i + 1;
     }
     // 喉塞音
-    elseif ($CheckWord[$i] == "'" || $CheckWord[$i] == "‘" || $CheckWord[$i] == "’") {
+    elseif ($CheckWord[$i] == "'" || $CheckWord[$i] == "‘" || $CheckWord[$i] == "’" || $CheckWord[$i] == "‘" || $CheckWord[$i] == "`") {
         $temp = $temp . '-' . $CheckWord[$i] . $word[$i+1];
         $i = $i + 1;
     }
