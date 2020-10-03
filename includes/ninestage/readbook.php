@@ -1,7 +1,8 @@
 <?php
 
 
-$url = 'https://5905411752d6.ngrok.io/assets/images/ninestagepic/'; // ngrok 重開就要更改
+//$url = 'https://5905411752d6.ngrok.io/assets/images/ninestagepic/'; // ngrok 重開就要更改
+$url = 'https://git.heroku.com/kasavakan-linebot.git/assets/images/ninestagepic/';
 $NewString = strtolower($message['text']);
 
 if (strlen($NewString) == 7) {
