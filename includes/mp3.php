@@ -2,7 +2,7 @@
 
 if (strtolower($message['text']) == "audio" || $message['text'] == "音頻" || $message['text'] == "音樂") {
 
-    $audiofileurl = 'https://kasavakan-linebot.herokuapp.com/assets/audios/A.mp3'; // 音樂文件網址
+    $audiofileurl = 'https://kasavakan-linebot.herokuapp.com/assets/audios/A.m4a'; // 音樂文件網址
 
     $milliseconds = '1000'; // 音樂長度 (毫秒)
 
