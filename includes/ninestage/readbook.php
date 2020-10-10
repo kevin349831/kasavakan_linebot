@@ -37,7 +37,7 @@ switch ($CheckPage) {//st 1 - 5 - 1
         $NextStage = $Arr[0] . $Arr[1] . $Arr[2] . $Arr[3] . $Arr[4] . $Arr[5] . $Arr[6];
         $NextPage = $Arr[7] + 1; //有問題
         $PrevStage = $Arr[0] . $Arr[1] . $Arr[2] . $Arr[3] . '9'. $Arr[6];
-        $PrevPage = '1';
+        $PrevPage = '3';
     }
     break;
   case '3':
