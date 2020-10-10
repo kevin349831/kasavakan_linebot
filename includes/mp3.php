@@ -20,7 +20,7 @@
 */
 if (strtolower($message['text']) == "audio" || $message['text'] == "音頻" || $message['text'] == "音樂") {
     $audiofile = dirname(dirname(__FILE__)).'/assets/audios/example.ogg'; // 音樂文件路徑
-		$audiofileurl = 'https://kasavakan-linebot.herokuapp.com/assets/audios/A.mp3';
+		$audiofileurl = 'https://kasavakan-linebot.herokuapp.com/assets/audios/example.ogg';
     //$audiofileurl = 'https://api.reh.tw/line/bot/example/assets/audios/A.mp3'; // 音樂文件網址
 
     // 使用 getID3 取得音樂長度 (毫秒)
