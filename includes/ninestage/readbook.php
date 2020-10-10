@@ -57,7 +57,7 @@ switch ($CheckPage) {//st 1 - 5 - 1
           $NextStage = '沒有下一頁了';
           $NextPage = '';
           $Arr[4] = $Arr[4] - 1;
-          $PrevStage = $Arr[0] . $Arr[1] . $Arr[2] . $Arr[3] . $Arr[4] . $Arr[5];
+          $PrevStage = $Arr[0] . $Arr[1] . $Arr[2] . $Arr[3] . $Arr[4] . $Arr[5] . '-';
           $PrevPage = '2';
       }
       else {
