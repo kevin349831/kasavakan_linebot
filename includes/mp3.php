@@ -24,7 +24,7 @@ if (strtolower($message['text']) == "audio" || $message['text'] == "音頻" || $
 
 
 
-    $audiofileurl = 'https://b7e7cd61f4cb.ngrok.io/assets/audios/new.mp3'; // 音樂文件網址
+    $audiofileurl = 'https://kasavakan-linebot.herokuapp.com/new.mp3'; // 音樂文件網址
 
     $milliseconds = '3000'; // 音樂長度 (毫秒)
 
