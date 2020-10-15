@@ -1,30 +1,10 @@
 <?php
 
 if (strtolower($message['text']) == "audio" || $message['text'] == "音頻" || $message['text'] == "音樂") {
-/*
-		file_put_contents('../assets/audios/combined.mp3',
-		file_get_contents('../assets/audios/A.mp3') .
-		file_get_contents('../assets/audios/B.mp3'));
-
-		$file = fopen('../assets/audios/combined.mp3', 'wb');
-		for ($a = 0; $a < $num; $a++) {
-		    $cacheFileName = '../assets/audios/file/A.mp3';
-		    $cacheFile     = fopen($cacheFileName, 'rb');
-		    $content       = fread($cacheFile, filesize($cacheFileName));
-		    fwrite($file, $content);
-		    fclose($cacheFile);
-		    unlink($cacheFileName);
-		}
-				fclose($file);
-		*/
-		//system("ls", $return_var);
-		//exec('ls', $output, $return_val);
-	$A = exec('cat ./assets/audios/A.mp3 ./assets/audios/A.mp3 > ./assets/audios/new.mp3', $output, $return_val);
-	//	$last_line = system('cat A.mp3 A.mp3 > new.mp3', $return_var);
-
-
-
-    $audiofileurl = 'https://kasavakan-linebot.herokuapp.com/assets/audios/new.mp3'; // 音樂文件網址
+		// 用指令合併mp3檔案 可以合併多個
+		$A = exec('cat ./assets/audios/A.mp3 ./assets/audios/A.mp3 > ./assets/audios/new.mp3', $output, $return_val);
+		//播放檔案位置 需要永久固定 因為會直接抓那個檔案來播放
+    $audiofileurl = 'https://kasavakan-linebot.herokuapp.com/assets/audios/sa.mp3'; // 音樂文件網址
 
     $milliseconds = '3000'; // 音樂長度 (毫秒)
 
