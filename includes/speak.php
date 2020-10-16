@@ -84,7 +84,6 @@ for ($i=0; $i < $num; $i++) {//把檔案名字加進去
 }
 $cat_file = $cat_file . "> ./assets/audios/" . $new_file_name . ".mp3";
 //---------下半部--------是放聲音
-echo 'hello';
 
 
 if (true){
