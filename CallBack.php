@@ -37,6 +37,7 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
+                    require_once('includes/speak.php')
                     require_once('includes/mp3.php');//傳聲音
                     require_once('includes/dictionary/dictionary.php');//查單字
                     require_once('includes/ninestage/newbook.php');
