@@ -92,7 +92,7 @@ if (true){
       $A = exec($cat_file);
   		//播放檔案位置 需要永久固定 因為會直接抓那個檔案來播放
       //$audiofileurl = 'https://kasavakan-linebot.herokuapp.com/assets/audios/new.mp3'; // 音樂文件網址
-      $audiofileurl = 'https://kasavakan-linebot.herokuapp.com/assets/audios/' . $new_file_name . '.mp3'; // 音樂文件網址
+      $audiofileurl = 'https://b7e7cd61f4cb.ngrok.io/assets/audios/' . $new_file_name . '.mp3'; // 音樂文件網址
 
       $milliseconds = '3000'; // 音樂長度 (毫秒)
 
