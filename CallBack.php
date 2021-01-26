@@ -37,13 +37,16 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
-                    require_once('includes/speak.php');
-                    require_once('includes/mp3.php');//傳聲音
-                    require_once('includes/dictionary/dictionary.php');//查單字
+
                     require_once('includes/ninestage/newbook.php');
                     require_once('includes/ninestage/selectstage.php'); //選擇九階課本 ok
                     require_once('includes/ninestage/selectlesson.php'); //選擇第幾課 ok
                     require_once('includes/ninestage/readbook.php'); //看課文 ok
+
+                    require_once('includes/speak.php');
+                    require_once('includes/mp3.php');//傳聲音
+                    require_once('includes/dictionary/dictionary.php');//查單字
+
                     require_once('includes/article/article.php'); // 看文章 還沒做
                     require_once('includes/library/library.php'); //
                     require_once('includes/split.php');// 拆字
