@@ -4,7 +4,7 @@
 if (strtolower($message['text']) == "DB"){
 
     //DB
-    $host = '210.240.162.61/phpmyadmin';
+    $host = '210.240.162.61';
     //改成你登入phpmyadmin帳號
     $user = 'savak999';
     //改成你登入phpmyadmin密碼
