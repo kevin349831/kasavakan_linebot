@@ -69,8 +69,8 @@ foreach ($client->parseEvents() as $event) {
                     array(
                         'type' => 'text',
                         'text' => "'inava u diya.
-a 族語好好玩 ku ngadan.
-sayhu ku rengay da nanta ngai na kasavakan."
+a 族語小幫手 ku ngadan.
+sayhu ku marengay nanta nagi kana kasavakan."
                     )
                 )
             ));
