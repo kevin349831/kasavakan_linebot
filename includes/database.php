@@ -43,6 +43,7 @@ if (strtolower($message['text']) == "DB"){
     //print($newData['dialects_sentence']);
     //print($newData['chinese_sentence']);
     //print($newData['radical_word']);
+    $theword = $newData['dialects_word'];
 
     $connect -> close();
     //--------------DB
@@ -53,7 +54,7 @@ if (strtolower($message['text']) == "DB"){
         'messages' => array(
             array(
                 'type' => 'text', // 訊息類型 (文字)
-                'text' => $newData['dialects_word']; // 回復訊息
+                'text' => '文字：' . $theword; // 回復訊息
             )
         )
     ));
