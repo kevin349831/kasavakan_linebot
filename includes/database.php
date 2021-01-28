@@ -1,7 +1,7 @@
 <?php
 
 
-if (strtolower($message['text']) == "DB"){
+if ($message['text'] == "DB" || $message['text'] == "資料庫"){
 
     //------------DB
     $host = '210.240.162.61';
@@ -54,30 +54,8 @@ if (strtolower($message['text']) == "DB"){
         'messages' => array(
             array(
                 'type' => 'text', // 訊息類型 (文字)
-                'text' => '文字：' . $theword; // 回復訊息
+                'text' => '文字：'.$theword // 回復訊息
             )
         )
     ));
 }
-
-//echo "連線成功";
-
-/*
-//設定連線編碼，防止中文字亂碼
-$connect->query("SET NAMES 'utf8'");
-
-//選擇資料表user，條件是欄位id = 1的
-$selectSql = "SELECT * FROM member WHERE id = 2";
-//呼叫query方法(SQL語法)
-$memberData = $connect->query($selectSql);
-//有資料筆數大於0時才執行
-if ($memberData->num_rows > 0) {
-//讀取剛才取回的資料
-    while ($row = $memberData->fetch_assoc()) {
-        print_r($row);
-    }
-} else {
-    echo '0筆資料';
-}
-//結果:Array ( [id] => 1 [account] => test [password] => 123 [nickname] => 測試 )
-*/

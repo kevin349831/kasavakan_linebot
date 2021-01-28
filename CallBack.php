@@ -37,6 +37,8 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
+                    require_once('includes/text.php');
+
                     require_once('includes/database.php'); // 資料查詢
                     require_once('includes/ninestage/newbook.php');
                     require_once('includes/ninestage/selectstage.php'); //選擇九階課本 ok
