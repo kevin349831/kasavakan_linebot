@@ -39,16 +39,16 @@ foreach ($client->parseEvents() as $event) {
                 case 'text':
                     require_once('includes/dash.php'); // 拆字ok ex: -ulra
 
-                    require_once('includes/text.php');
+                    require_once('includes/text.php'); //資料庫還沒連上去
 
-                    require_once('includes/database.php'); // 資料查詢
-                    require_once('includes/ninestage/newbook.php');
+                    require_once('includes/database.php'); // 資料查詢 
+                    //require_once('includes/ninestage/newbook.php');
                     require_once('includes/ninestage/selectstage.php'); //選擇九階課本 ok
                     require_once('includes/ninestage/selectlesson.php'); //選擇第幾課 ok
                     require_once('includes/ninestage/readbook.php'); //看課文 ok
 
                     require_once('includes/speak.php');
-                    require_once('includes/mp3.php');//傳聲音
+                    require_once('includes/mp3.php');//傳聲音 ok
                     require_once('includes/dictionary/dictionary.php');//查單字
 
                     //require_once('includes/article/article.php'); // 看文章 還沒做

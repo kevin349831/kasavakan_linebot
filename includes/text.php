@@ -1,5 +1,5 @@
 <?php
-$uniyan = '沒有';
+$uniyan = '中文';
 if (strtolower($message['text']) == "text" || $message['text'] == "文字" || $message['text'] == "指令"){
     $client->replyMessage(array(
         'replyToken' => $event['replyToken'],
