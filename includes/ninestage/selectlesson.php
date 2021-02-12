@@ -1,6 +1,6 @@
 <?php
 
-$url = 'https://3a321c3f4755.ngrok.io/ninestagepic/stage1/'; // ngrok 重開就要更改
+
 $NewString = strtolower($message['text']);
 $NewArr = str_split($NewString,2); //st
 $LessonArr = str_split($NewString,1); // [2]=數字 ex: st1 -> 1

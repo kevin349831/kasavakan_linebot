@@ -37,6 +37,8 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
+                    require_once('includes/dash.php'); // 拆字ok ex: -ulra
+
                     require_once('includes/text.php');
 
                     require_once('includes/database.php'); // 資料查詢
@@ -49,9 +51,9 @@ foreach ($client->parseEvents() as $event) {
                     require_once('includes/mp3.php');//傳聲音
                     require_once('includes/dictionary/dictionary.php');//查單字
 
-                    require_once('includes/article/article.php'); // 看文章 還沒做
+                    //require_once('includes/article/article.php'); // 看文章 還沒做
                     require_once('includes/library/library.php'); //
-                    require_once('includes/split.php');// 拆字
+                    //require_once('includes/split.php');// 拆字 ex: ulra
 
 
                     //require_once('includes/any.php');
@@ -72,7 +74,7 @@ foreach ($client->parseEvents() as $event) {
                         'type' => 'text',
                         'text' => "'inava u diya.
 a 族語小幫手 ku ngadan.
-sayhu ku marengay nanta nagi kana kasavakan."
+sayhu ku marengay da nanta ngai kana kasavakan."
                     )
                 )
             ));
@@ -85,7 +87,7 @@ sayhu ku marengay nanta nagi kana kasavakan."
                         'type' => 'text',
                         'text' => "'inava u diya.
 a 族語好好玩 ku ngadan.
-sayhu ku rengay da nanta ngai na kasavakan."
+sayhu ku marengay da nanta ngai kana kasavakan."
                     )
                 )
             ));

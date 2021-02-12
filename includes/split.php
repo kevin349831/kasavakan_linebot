@@ -1,22 +1,5 @@
 <?php
-/**
- * Copyright 2017 GoneTone
- *
- * Line Bot
- * 範例 Example Bot (Text)
- *
- * 此範例 GitHub 專案：https://github.com/GoneTone/line-example-bot-php
- * 官方文檔：https://developers.line.biz/en/reference/messaging-api#text-message
- */
-/**
-陣列輸出 Json
-==============================
-{
-    "type": "text",
-    "text": "Hello, world!"
-}
-==============================
-*/
+
 // 族語拆字
 $word = strtolower($message['text']);
 $CheckWord = str_split($word,1);
@@ -39,6 +22,14 @@ for ($i=0; $i < $CheckLen; $i++) {//suwan
     }
     //lr
     elseif ($CheckWord[$i] == 'l' && $CheckWord[$i+1] == 'r') {
+        if ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
+            $temp = $temp . '-';
+        }
+        $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
+        $i = $i + 1;
+    }
+    //lh
+    elseif ($CheckWord[$i] == 'l' && $CheckWord[$i+1] == 'h') {
         if ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
             $temp = $temp . '-';
         }
