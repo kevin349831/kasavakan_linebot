@@ -1,22 +1,5 @@
 <?php
-/**
- * Copyright 2017 GoneTone
- *
- * Line Bot
- * 範例 Example Bot (Text)
- *
- * 此範例 GitHub 專案：https://github.com/GoneTone/line-example-bot-php
- * 官方文檔：https://developers.line.biz/en/reference/messaging-api#text-message
- */
-/**
-陣列輸出 Json
-==============================
-{
-    "type": "text",
-    "text": "Hello, world!"
-}
-==============================
-*/
+$uniyan = '沒有';
 if (strtolower($message['text']) == "text" || $message['text'] == "文字" || $message['text'] == "指令"){
     $client->replyMessage(array(
         'replyToken' => $event['replyToken'],
@@ -50,7 +33,7 @@ if (strtolower($message['text']) == "text" || $message['text'] == "文字" || $m
                     "contents"=> array(
                       array(
                         "type"=> "text",
-                        "text"=> "中文",
+                        "text"=> $uniyan,
                         "size"=> "xl",
                         "color"=> "#AAAAAA",
                         "align"=> "start",
