@@ -37,7 +37,7 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
-                    require_once('includes/selectShow.php');//半ok 資料庫查詢顯示
+
                     //require_once('includes/select.php'); //SQLite3
                     require_once('includes/dash.php'); // 拆字ok ex: -ulra
                     require_once('includes/library/library.php'); //
@@ -57,7 +57,7 @@ foreach ($client->parseEvents() as $event) {
 
                     //require_once('includes/split.php');// 拆字 ex: ulra
 
-
+require_once('includes/selectShow.php');//半ok 資料庫查詢顯示
                     //require_once('includes/any.php');
                     break;
                 default:

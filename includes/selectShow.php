@@ -170,7 +170,7 @@ if (true){
                     "action"=> array(
                       "type"=> "message",
                       "label"=> "聽發音",
-                      "text"=> $ethnic
+                      "text"=> ".".$ethnic
                     ),
                     "style"=> "primary"
                   )
