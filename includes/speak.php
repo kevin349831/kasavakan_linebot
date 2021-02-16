@@ -3,12 +3,10 @@ $NewString = strtolower($message['text']);
 $NewCheckWord = str_split($NewString,1); //.word
 if (strtolower($NewCheckWord[0]) == ".") { // 檢查是不是.開頭
   //如果第一個字是. 就把它移除
-  $Checkdesh = str_split($NewString,1);
-  if($Checkdesh[0] == '.') {
-    $NewString = substr($NewString,1,strlen($NewString));
-  }
+  $word = strtolower($message['text']);
+  $word = substr($word,1);
 // 族語拆字
-$word = strtolower($message['text']);
+
 $CheckWord = str_split($word,1);
 $CheckLen = strlen($word);
 $temp = '';
