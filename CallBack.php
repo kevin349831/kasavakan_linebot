@@ -37,6 +37,7 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
+                    require_once('includes/selectShow.php');
                     require_once('includes/select.php'); //SQLite3
                     require_once('includes/dash.php'); // 拆字ok ex: -ulra
 
