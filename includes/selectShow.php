@@ -1,11 +1,15 @@
 <?php
+
+
+if (true){
+    $theword = "'".strtolower($message['text'])."'";
+
     $ethnic ='';
     $chinese = '';
     $ethnic_sentence='';
     $chinese_sentence='';
     $radical ='';
 
-    $theword = '';
     $host        = "host=ec2-100-24-139-146.compute-1.amazonaws.com";
     $port        = "port=5432";
     $dbname      = "dbname=d74b535jl61vqu";
@@ -13,13 +17,13 @@
 
     $db = pg_connect( "$host $port $dbname $credentials"  );
     if(!$db){
-      $theword = "Error : Unable to open database";
+      echo "Error : Unable to open database";
     } else {
-      $theword = "Opened database successfully";
+      echo "Opened database successfully";
     }
     //------DB CONNETC
     $sql =<<<EOF
-    SELECT * FROM public.kasavakan_db WHERE ethnic like 'suwan';
+    SELECT * FROM public.kasavakan_db WHERE ethnic like $theword;
     EOF;
     $ret = pg_query($db, $sql);
     if(!$ret){
@@ -27,19 +31,13 @@
     exit;
     }
     while($row = pg_fetch_row($ret)){
-    $theword = $theword. "Data1 = ". $row[0] . "";
-    $theword = $theword. "Data2 = ". $row[1] ."";
-    $theword = $theword. "Data3 = ". $row[2] ."";
-    $theword = $theword. "Data4 =  ".$row[3] ."";
-    $theword = $theword. "Data5 =  ".$row[4] ."";
-    $ethnic =$row[0];
+    $ethnic = $row[0];
     $chinese = $row[1];
-    $ethnic_sentence=$row[2];
-    $chinese_sentence=$row[3];
-    $radical =$row[4];
+    $ethnic_sentence = $row[2];
+    $chinese_sentence = $row[3];
+    $radical = $row[4];
     }
     echo "Operation done successfully";
-    $theword = $theword."okok";
     pg_close($db);
     //DB SELECT
     //--------------DB
@@ -48,9 +46,6 @@
 
 
 
-
-
-if (strtolower($message['text']) == "text" || $message['text'] == "文字" || $message['text'] == "指令"){
     $client->replyMessage(array(
         'replyToken' => $event['replyToken'],
         'messages' => array(
@@ -175,7 +170,7 @@ if (strtolower($message['text']) == "text" || $message['text'] == "文字" || $m
                     "action"=> array(
                       "type"=> "message",
                       "label"=> "聽發音",
-                      "text"=> "sahar"
+                      "text"=> $ethnic
                     ),
                     "style"=> "primary"
                   )
