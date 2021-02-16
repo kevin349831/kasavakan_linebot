@@ -28,11 +28,11 @@ echo pg_last_error($db);
 exit;
 }
 while($row = pg_fetch_row($ret)){
-echo "1 = ". $row[0] . "";
-echo "2 = ". $row[1] ."";
-echo "3 = ". $row[2] ."";
-echo "4 =  ".$row[3] ."";
-echo "5 =  ".$row[4] ."";
+$theword = $theword. "1 = ". $row[0] . "";
+$theword = $theword. "2 = ". $row[1] ."";
+$theword = $theword. "3 = ". $row[2] ."";
+$theword = $theword. "4 =  ".$row[3] ."";
+$theword = $theword. "5 =  ".$row[4] ."";
 }
 echo "Operation done successfully";
 $theword = $theword."okok";
