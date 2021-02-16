@@ -13,6 +13,11 @@ if ($message['text'] == "DB" || $message['text'] == "資料庫"){
     {
       $theword = "Database connection success.";
     }
+
+    $result = pg_query($con,"SELEC FROM kasavakan WHERE ethnic like 'suwan'");
+    while($row=pg_fetch_assoc($result)){
+      $theword = $theword.$row['ethnic'];
+    }
     //--------------DB
 
 
