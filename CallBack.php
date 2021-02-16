@@ -39,7 +39,7 @@ foreach ($client->parseEvents() as $event) {
                 case 'text':
                     //require_once('includes/select.php'); //SQLite3
                     require_once('includes/dash.php'); // 拆字ok ex: -ulra
-                    require_once('includes/library/library.php'); //
+                    //require_once('includes/library/library.php'); //
                     //require_once('includes/text.php'); //資料庫還沒連上去
                     //require_once('includes/database.php'); // 資料查詢
                     //require_once('includes/ninestage/newbook.php');
