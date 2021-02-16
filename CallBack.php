@@ -37,11 +37,12 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
+                    require_once('includes/select.php'); //SQLite3
                     require_once('includes/dash.php'); // 拆字ok ex: -ulra
 
                     require_once('includes/text.php'); //資料庫還沒連上去
 
-                    require_once('includes/database.php'); // 資料查詢 
+                    require_once('includes/database.php'); // 資料查詢
                     //require_once('includes/ninestage/newbook.php');
                     require_once('includes/ninestage/selectstage.php'); //選擇九階課本 ok
                     require_once('includes/ninestage/selectlesson.php'); //選擇第幾課 ok
