@@ -1,4 +1,7 @@
 <?php
+$NewString = strtolower($message['text']);
+$NewCheckWord = str_split($NewString,1); //.word
+if (strtolower($NewCheckWord[0]) == ".") { // 檢查是不是.開頭
 
 // 族語拆字
 $word = strtolower($message['text']);
@@ -86,7 +89,7 @@ $cat_file = $cat_file . "> ./assets/audios/" . $new_file_name . ".mp3";
 //---------下半部--------是放聲音
 
 
-if (true){
+
       // 用指令合併mp3檔案 可以合併多個
   		//$A = exec('cat ./assets/audios/ka.mp3 ./assets/audios/sa.mp3 ./assets/audios/va.mp3 ./assets/audios/kan.mp3 > ./assets/audios/new.mp3', $output, $return_val);
       $A = exec($cat_file);
