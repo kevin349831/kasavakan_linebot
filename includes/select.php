@@ -19,7 +19,7 @@ if ($message['text'] == "DB" || $message['text'] == "資料庫"){
 
 
 $sql =<<<EOF
-SELECT * from COMPANY;
+SELECT * FROM kasavakan_db WHERE ethtic like 'suwan';
 EOF;
 
 $ret = pg_query($db, $sql);
@@ -31,7 +31,8 @@ while($row = pg_fetch_row($ret)){
 $theword = $theword. "1 = ". $row[0] . "";
 $theword = $theword. "2 = ". $row[1] ."";
 $theword = $theword. "3 = ". $row[2] ."";
-$theword = $theword. "4 =  ".$row[4] ."";
+$theword = $theword. "4 =  ".$row[3] ."";
+$theword = $theword. "5 =  ".$row[4] ."";
 }
 $theword = $theword. "Operation done successfully";
 pg_close($db);
