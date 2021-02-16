@@ -37,31 +37,23 @@ foreach ($client->parseEvents() as $event) {
             $message = $event['message'];
             switch ($message['type']) {
                 case 'text':
-
                     //require_once('includes/select.php'); //SQLite3
                     require_once('includes/dash.php'); // 拆字ok ex: -ulra
                     require_once('includes/library/library.php'); //
                     //require_once('includes/text.php'); //資料庫還沒連上去
-
                     //require_once('includes/database.php'); // 資料查詢
                     //require_once('includes/ninestage/newbook.php');
                     require_once('includes/ninestage/selectstage.php'); //選擇九階課本 ok
                     require_once('includes/ninestage/selectlesson.php'); //選擇第幾課 ok
                     require_once('includes/ninestage/readbook.php'); //看課文 ok
-
                     require_once('includes/speak.php');
                     //require_once('includes/mp3.php');//傳聲音 ok
-                    //require_once('includes/dictionary/dictionary.php');//查單字
-
-                    //require_once('includes/article/article.php'); // 看文章 還沒做
-
                     //require_once('includes/split.php');// 拆字 ex: ulra
-
-require_once('includes/selectShow.php');//半ok 資料庫查詢顯示
+                    require_once('includes/selectShow.php');//半ok 資料庫查詢顯示
                     //require_once('includes/any.php');
                     break;
                 default:
-                    //error_log("Unsupporeted message type: " . $message['type']);
+                    error_log("Unsupporeted message type: " . $message['type']);
                     break;
             }
             break;

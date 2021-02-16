@@ -1,6 +1,5 @@
 <?php
 
-
 $NewString = strtolower($message['text']);
 $NewArr = str_split($NewString,2); //st
 $LessonArr = str_split($NewString,1); // [2]=數字 ex: st1 -> 1

@@ -1,8 +1,6 @@
 <?php
 
-
-$url = 'https://3a321c3f4755.ngrok.io/ninestagepic/stage1/'; // ngrok 重開就要更改
-if (strtolower($message['text']) == "九階教材" || $message['text'] == "課本") {
+if (strtolower($message['text'] == "課本") {
     $client->replyMessage(array(
         'replyToken' => $event['replyToken'],
         'messages' => array(
@@ -24,7 +22,6 @@ if (strtolower($message['text']) == "九階教材" || $message['text'] == "課�
                   ),
                   "hero" => array(
                     "type" => "image",
-                    //"url" => "https://static.vecteezy.com/system/resources/previews/000/460/815/non_2x/vector-illustration-of-ethnic-pattern.jpg",
                     "url" => "https://raw.githubusercontent.com/kevin349831/kasavakan_linebot/master/picture/stage_1/1-1-1.jpg",
                     "margin" => "xs",
                     "size" => "full",
