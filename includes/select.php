@@ -19,7 +19,7 @@ if ($message['text'] == "DB" || $message['text'] == "資料庫"){
 
 
 $sql =<<<EOF
-SELECT * FROM public.kasavakan_db WHERE ethtic like 'suwan';
+SELECT * FROM public.kasavakan_db WHERE ethnic like 'suwan';
 EOF;
 
 $ret = pg_query($db, $sql);
