@@ -30,7 +30,7 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
       }
       //lr
       elseif ($CheckWord[$i] == 'l' && $CheckWord[$i+1] == 'r') {
-          if ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
+          if ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e' || $CheckWord[$i-1] == "'") {
               $temp = $temp . '-';
           }
           if ($i == $CheckLen-2) { //lr 結尾
