@@ -68,22 +68,22 @@ for ($i=0; $i < $CheckLen; $i++) {//suwan
         if ($CheckWord[$i+1] == 'a' || $CheckWord[$i+1] == 'i' || $CheckWord[$i+1] == 'u' || $CheckWord[$i+1] == 'o' || $CheckWord[$i+1] == 'e') {
             $Checkdesh = str_split($temp,1);
             $n = strlen($temp) - 1;
-            if ($Checkdesh[$n] == '-') { // sinsi 會變成 sin--si 所以要檢查
+            if ($Checkdesh[$n] == '-') { // sinsi 會變成 sin--si 所以要檢查    '讀不到喉塞音檔案 用x取代
                 //$temp = $temp . $CheckWord[$i];
-                $temp = $temp . "'";
+                $temp = $temp . "x";
             }
             else {
                 //$temp = $temp . '-' . $CheckWord[$i];
-                $temp = $temp . '-' . "'";
+                $temp = $temp . '-' . "x";
             }
         }
         elseif ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
             //$temp = $temp . $CheckWord[$i] . '-';
-            $temp = $temp . "'" . '-';
+            $temp = $temp . "x" . '-';
         }
         else {
             //$temp = $temp . $CheckWord[$i];
-            $temp = $temp . "'";
+            $temp = $temp . "x";
         }
     }
 }
