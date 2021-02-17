@@ -33,9 +33,6 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
           if ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
               $temp = $temp . '-';
           }
-          if ($i == $CheckLen-2) { //lr 結尾
-              $temp = substr($temp,0,-1);
-          }
           $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
           $i = $i + 1;
       }
@@ -43,9 +40,6 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
       elseif ($CheckWord[$i] == 'l' && $CheckWord[$i+1] == 'h') {
           if ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
               $temp = $temp . '-';
-          }
-          if ($i == $CheckLen-2) { //lh 結尾
-              $temp = substr($temp,0,-1);
           }
           $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
           $i = $i + 1;

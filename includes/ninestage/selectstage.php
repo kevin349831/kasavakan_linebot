@@ -1,6 +1,6 @@
 <?php
 
-if (strtolower($message['text']) == "九階教材" || $message['text'] == "課本") {
+if (strtolower($message['text']) == "教材" || $message['text'] == "課本") {
     $client->replyMessage(array(
         'replyToken' => $event['replyToken'],
         'messages' => array(
