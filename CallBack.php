@@ -38,7 +38,6 @@ foreach ($client->parseEvents() as $event) {
             switch ($message['type']) {
                 case 'text':
                     require_once('includes/dash.php'); // 拆字ok ex: -ulra
-                    require_once('includes/library/library.php');
                     require_once('includes/ninestage/selectstage.php'); //選擇九階課本 ok
                     require_once('includes/ninestage/selectlesson.php'); //選擇第幾課 ok
                     require_once('includes/ninestage/readbook.php'); //看課文 ok
