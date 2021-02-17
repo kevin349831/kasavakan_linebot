@@ -64,7 +64,11 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
       // 喉塞音
       elseif ($CheckWord[$i] == "'" || $CheckWord[$i] == "‘" || $CheckWord[$i] == "’" || $CheckWord[$i] == "‘" || $CheckWord[$i] == "`") {
           //$temp = $temp . '-' . $CheckWord[$i] . $CheckWord[$i+1];
-          $temp = $temp . '-' . 'x' . $CheckWord[$i+1];
+          if ($i == $CheckLen-1) { //喉塞音 結尾
+              $temp = $temp . 'x';
+          }else{
+              $temp = $temp . '-' . 'x' . $CheckWord[$i+1];
+          }
           $i = $i + 1;
       }
       else {
