@@ -19,7 +19,12 @@ for ($i=0; $i < $CheckLen; $i++) {//suwan
             $i = $i +1;
         }
         elseif ($i == $CheckLen-2) { //倒數最後第二個字是母音 直接合併最後一個字
-            $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
+            if ($CheckWord[$i+1] == "'"){//如果最後一個是喉塞音 不要改成x再併上去
+                $temp = $temp . $CheckWord[$i] . 'x';
+            }
+            else{
+                $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
+            }
             $i = $i + 1;
         }
         else {
