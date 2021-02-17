@@ -41,7 +41,7 @@ foreach ($client->parseEvents() as $event) {
                     require_once('includes/ninestage/selectstage.php'); //選擇九階課本 ok
                     require_once('includes/ninestage/selectlesson.php'); //選擇第幾課 ok
                     require_once('includes/ninestage/readbook.php'); //看課文 ok
-                    require_once('includes/speak.php');
+                    require_once('includes/speak.php');//傳發音
                     require_once('includes/selectShow.php');//半ok 資料庫查詢顯示
                     break;
                 default:
