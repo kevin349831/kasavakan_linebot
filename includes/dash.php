@@ -63,7 +63,7 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
       }
       // 喉塞音
       elseif ($CheckWord[$i] == "'" || $CheckWord[$i] == "‘" || $CheckWord[$i] == "’" || $CheckWord[$i] == "‘" || $CheckWord[$i] == "`") {
-          if ($CheckWord[$i+1] == 'a' || $CheckWord[$i+1] == 'i' || $CheckWord[$i+1] == 'u' || $CheckWord[$i+1] == 'o' || $CheckWord[$i+1] == 'e' ||){
+          if ($CheckWord[$i+1] == 'a' || $CheckWord[$i+1] == 'i' || $CheckWord[$i+1] == 'u' || $CheckWord[$i+1] == 'o' || $CheckWord[$i+1] == 'e'){
               $temp = $temp . '-' . $CheckWord[$i] . $CheckWord[$i+1];//如果下一個是母音才可以直接並下去 否則再lre'lre'會發生錯變成 lre-'l-re'
           }
           else{
