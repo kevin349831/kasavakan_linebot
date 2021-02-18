@@ -30,11 +30,15 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
       }
       //lr
       elseif ($CheckWord[$i] == 'l' && $CheckWord[$i+1] == 'r') {
-          if ($i == $CheckLen-2) { //lr 結尾
+          if ($i == $CheckLen-2) { //ng 結尾
               if ($CheckWord[$i-1] == "'"){
                   $temp = substr($temp,0,-1);
               }
               $temp = $temp . 'lr';
+          }
+          elseif ($i == $CheckLen-4) { //ng 倒數第三 ex: maranger nger
+              $temp = $temp . '-' . 'lr' . $CheckWord[$i+2] . $CheckWord[$i+3]; // 直接合併 ng + er
+              break;
           }
           elseif ($i>0){
             if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e') {
@@ -48,11 +52,15 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
       }
       //lh
       elseif ($CheckWord[$i] == 'l' && $CheckWord[$i+1] == 'h') {
-          if ($i == $CheckLen-2) { //lr 結尾
+          if ($i == $CheckLen-2) { //ng 結尾
               if ($CheckWord[$i-1] == "'"){
                   $temp = substr($temp,0,-1);
               }
               $temp = $temp . 'lh';
+          }
+          elseif ($i == $CheckLen-4) { //ng 倒數第三 ex: maranger nger
+              $temp = $temp . '-' . 'lh' . $CheckWord[$i+2] . $CheckWord[$i+3]; // 直接合併 ng + er
+              break;
           }
           elseif ($i>0){
             if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e') {
@@ -66,11 +74,15 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
       }
       //ng
       elseif ($CheckWord[$i] == 'n' && $CheckWord[$i+1] == 'g') {
-          if ($i == $CheckLen-2) { //lr 結尾
+          if ($i == $CheckLen-2) { //ng 結尾
               if ($CheckWord[$i-1] == "'"){
                   $temp = substr($temp,0,-1);
               }
               $temp = $temp . 'ng';
+          }
+          elseif ($i == $CheckLen-4) { //ng 倒數第三 ex: maranger nger
+              $temp = $temp . '-' . 'ng' . $CheckWord[$i+2] . $CheckWord[$i+3]; // 直接合併 ng + er
+              break;
           }
           elseif ($i>0){
             if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e') {
