@@ -30,56 +30,41 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
       }
       //lr
       elseif ($CheckWord[$i] == 'l' && $CheckWord[$i+1] == 'r') {
-          if ($i == $CheckLen-2) { //lr 結尾
-              if ($CheckWord[$i-1] == "'"){
-                  $temp = substr($temp,0,-1);
-              }
-              $temp = $temp . 'ng';
-          }
-          elseif ($i>0){
-            if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e') {
-                $temp = $temp . 'ng';
+          if ($i>0){
+            if ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
+                $temp = $temp . '-';
             }
           }
-          else{
-            $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
+          if ($i == $CheckLen-2) { //lr 結尾
+              $temp = substr($temp,0,-1);
           }
+          $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
           $i = $i + 1;
       }
       //lh
       elseif ($CheckWord[$i] == 'l' && $CheckWord[$i+1] == 'h') {
-          if ($i == $CheckLen-2) { //lr 結尾
-              if ($CheckWord[$i-1] == "'"){
-                  $temp = substr($temp,0,-1);
-              }
-              $temp = $temp . 'ng';
-          }
-          elseif ($i>0){
-            if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e') {
-                $temp = $temp . 'ng';
+          if ($i>0){
+            if ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
+                $temp = $temp . '-';
             }
           }
-          else{
-            $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
+          if ($i == $CheckLen-2) { //lr 結尾
+              $temp = substr($temp,0,-1);
           }
+          $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
           $i = $i + 1;
       }
       //ng
       elseif ($CheckWord[$i] == 'n' && $CheckWord[$i+1] == 'g') {
-          if ($i == $CheckLen-2) { //lr 結尾
-              if ($CheckWord[$i-1] == "'"){
-                  $temp = substr($temp,0,-1);
-              }
-              $temp = $temp . 'ng';
-          }
-          elseif ($i>0){
-            if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e') {
-                $temp = $temp . 'ng';
+          if ($i>0){
+            if ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
+                $temp = $temp . '-';
             }
           }
-          else{
-            $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
+          if ($i == $CheckLen-2) { //lr 結尾
+              $temp = substr($temp,0,-1);
           }
+          $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
           $i = $i + 1;
       }
       // 喉塞音
@@ -96,7 +81,12 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
           if ($CheckWord[$i+1] == 'a' || $CheckWord[$i+1] == 'i' || $CheckWord[$i+1] == 'u' || $CheckWord[$i+1] == 'o' || $CheckWord[$i+1] == 'e') {
               $Checkdesh = str_split($temp,1);
               $n = strlen($temp) - 1;
-              $temp = $temp . '-' . $CheckWord[$i];
+              if ($Checkdesh[$i] == '-') { // sinsi 會變成 sin--si 所以要檢查
+                  $temp = $temp . $CheckWord[$i];
+              }
+              else {
+                  $temp = $temp . '-' . $CheckWord[$i];
+              }
           }
           elseif ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
               $temp = $temp . $CheckWord[$i] . '-';
@@ -105,7 +95,6 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
               $temp = $temp . $CheckWord[$i];
           }
       }
-
   }
 
   //如果第一個字是dash 就把它移除
