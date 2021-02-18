@@ -73,7 +73,7 @@ for ($i=0; $i < $CheckLen; $i++) {//suwan
               $i = $i + 1;
           }
           else{
-            $temp = $temp . $CheckWord[$i] . '-';
+            $temp = $temp . 'x' . '-';
           }
     }
     else {
