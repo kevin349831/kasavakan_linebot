@@ -101,7 +101,7 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
               $i = $i + 1;
           }
           else{
-              $temp = $temp . $CheckWord[$i] . '-';
+              $temp = $temp . $CheckWord[$i];
           }
       }
       else {
