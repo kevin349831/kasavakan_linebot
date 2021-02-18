@@ -10,6 +10,8 @@ $word = substr($word,1);
 
 $CheckWord = str_split($word,1);
 $CheckLen = strlen($word);
+
+
 $temp = '';
 for ($i=0; $i < $CheckLen; $i++) {//suwan
     if ($CheckWord[$i] == 'a' || $CheckWord[$i] == 'i' || $CheckWord[$i] == 'u' || $CheckWord[$i] == 'o' || $CheckWord[$i] == 'e') {

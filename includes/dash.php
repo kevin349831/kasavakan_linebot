@@ -11,6 +11,7 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
   //$word = strtolower($message['text']);
   $CheckWord = str_split($NewString,1);
   $CheckLen = strlen($NewString);
+
   $temp = '';
   for ($i=0; $i < $CheckLen; $i++) {//suwan
       if ($CheckWord[$i] == 'a' || $CheckWord[$i] == 'i' || $CheckWord[$i] == 'u' || $CheckWord[$i] == 'o' || $CheckWord[$i] == 'e') {
@@ -42,10 +43,12 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
       }
       //lh
       elseif ($CheckWord[$i] == 'l' && $CheckWord[$i+1] == 'h') {
-          if ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
-              $temp = $temp . '-';
+          if ($i>0){
+            if ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
+                $temp = $temp . '-';
+            }
           }
-          if ($i == $CheckLen-2) { //lh 結尾
+          if ($i == $CheckLen-2) { //lr 結尾
               $temp = substr($temp,0,-1);
           }
           $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
@@ -53,10 +56,12 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
       }
       //ng
       elseif ($CheckWord[$i] == 'n' && $CheckWord[$i+1] == 'g') {
-          if ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
-              $temp = $temp . '-';
+          if ($i>0){
+            if ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
+                $temp = $temp . '-';
+            }
           }
-          if ($i == $CheckLen-2) { //ng 結尾
+          if ($i == $CheckLen-2) { //lr 結尾
               $temp = substr($temp,0,-1);
           }
           $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
