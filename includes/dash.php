@@ -30,8 +30,10 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
       }
       //lr
       elseif ($CheckWord[$i] == 'l' && $CheckWord[$i+1] == 'r') {
-          if ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e' || $CheckWord[$i-1] == "'") {
-              $temp = $temp . '-';
+          if ($i>0){
+            if ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
+                $temp = $temp . '-';
+            }
           }
           if ($i == $CheckLen-2) { //lr 結尾
               $temp = substr($temp,0,-1);
@@ -65,12 +67,11 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
       elseif ($CheckWord[$i] == "'" || $CheckWord[$i] == "‘" || $CheckWord[$i] == "’" || $CheckWord[$i] == "‘" || $CheckWord[$i] == "`") {
           if ($CheckWord[$i+1] == 'a' || $CheckWord[$i+1] == 'i' || $CheckWord[$i+1] == 'u' || $CheckWord[$i+1] == 'o' || $CheckWord[$i+1] == 'e'){
               $temp = $temp . '-' . $CheckWord[$i] . $CheckWord[$i+1];//如果下一個是母音才可以直接並下去 否則再lre'lre'會發生錯變成 lre-'l-re'
+              $i = $i + 1;
           }
           else{
-              $temp = $temp . $CheckWord[$i];
+              $temp = $temp . $CheckWord[$i] . '-';
           }
-
-          $i = $i + 1;
       }
       else {
           if ($CheckWord[$i+1] == 'a' || $CheckWord[$i+1] == 'i' || $CheckWord[$i+1] == 'u' || $CheckWord[$i+1] == 'o' || $CheckWord[$i+1] == 'e') {
