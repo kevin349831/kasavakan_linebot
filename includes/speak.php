@@ -21,11 +21,11 @@ for ($i=0; $i < $CheckLen; $i++) {//suwan
         elseif ($i == $CheckLen-2) { //倒數最後第二個字是母音 直接合併最後一個字
             if ($CheckWord[$i+1] == "'"){//如果最後一個是喉塞音 不要改成x再併上去
                 $temp = $temp . $CheckWord[$i] . 'x';
+                $i = $i +1;
             }
             else{
-                $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
+                $temp = $temp . $CheckWord[$i];
             }
-            $i = $i + 1;
         }
         else {
             $temp = $temp . $CheckWord[$i];
