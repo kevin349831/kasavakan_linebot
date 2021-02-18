@@ -1,5 +1,4 @@
 <?php
-
 $NewString = strtolower($message['text']);
 $NewCheckWord = str_split($NewString,1); //-word
 if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
