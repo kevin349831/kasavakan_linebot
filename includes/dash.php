@@ -34,11 +34,11 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
               if ($CheckWord[$i-1] == "'"){
                   $temp = substr($temp,0,-1);
               }
-              $temp = $temp . 'ng';
+              $temp = $temp . 'lr';
           }
           elseif ($i>0){
             if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e') {
-                $temp = $temp . 'ng';
+                $temp = $temp . 'lr';
             }
           }
           else{
@@ -52,11 +52,11 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
               if ($CheckWord[$i-1] == "'"){
                   $temp = substr($temp,0,-1);
               }
-              $temp = $temp . 'ng';
+              $temp = $temp . 'lh';
           }
           elseif ($i>0){
             if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e') {
-                $temp = $temp . 'ng';
+                $temp = $temp . 'lh';
             }
           }
           else{
