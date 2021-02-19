@@ -26,7 +26,7 @@ if (strtolower($NewCheckWord[0]) == ".") { // 檢查是不是-開頭
               }
               else{
                   $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
-              }  
+              }
               $i = $i + 1;
           }
           else {
@@ -86,12 +86,18 @@ if (strtolower($NewCheckWord[0]) == ".") { // 檢查是不是-開頭
               $temp = $temp . 'ng';
           }
           elseif ($i == $CheckLen-4) { //ng 倒數第三 ex: maranger nger
+            if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e'){//解決dingwa di-ngwa的問題
+                $temp = $temp . 'ng' . '-' . $CheckWord[$i+2] . $CheckWord[$i+3] ;
+                break;
+            }
+            else{
               $temp = $temp . '-' . 'ng' . $CheckWord[$i+2] . $CheckWord[$i+3]; // 直接合併 ng + er
               break;
+            }
           }
           elseif ($i>0){
             if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e') {
-                $temp = $temp . '-' . 'ng';
+                $temp = $temp . 'ng';
             }
           }
           else{

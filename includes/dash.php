@@ -81,7 +81,7 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
               $temp = $temp . 'ng';
           }
           elseif ($i == $CheckLen-4) { //ng 倒數第三 ex: maranger nger
-            if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e'){
+            if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e'){//解決dingwa di-ngwa的問題
                 $temp = $temp . 'ng' . '-' . $CheckWord[$i+2] . $CheckWord[$i+3] ;
                 break;
             }
@@ -92,7 +92,7 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
           }
           elseif ($i>0){
             if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e') {
-                $temp = $temp . '-' . 'ng';
+                $temp = $temp . 'ng';//delete 'dash'
             }
           }
           else{
@@ -115,9 +115,6 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
               $Checkdesh = str_split($temp,1);
               $n = strlen($temp) - 1;//這個宣告在幹嘛用的？？？？？
               $temp = $temp . '-' . $CheckWord[$i];
-          }
-          elseif ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
-              $temp = $temp . $CheckWord[$i] . '-';
           }
           else {
               $temp = $temp . $CheckWord[$i];
