@@ -95,9 +95,12 @@ if (strtolower($NewCheckWord[0]) == ".") { // 檢查是不是-開頭
               break;
             }
           }
-          elseif ($i>0){
-            if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e') {
-                $temp = $temp . 'ng';
+          elseif ($i>0){//kuresangdalr & himiyanghing error != 改成 ==
+            if ($CheckWord[$i+2] == 'a' || $CheckWord[$i+2] == 'i' || $CheckWord[$i+2] == 'u' || $CheckWord[$i+2] == 'o' || $CheckWord[$i+2] == 'e') {
+                $temp = $temp . '-' .'ng' ;
+            }
+            else{
+                $temp = $temp . '-' .'ng' ;
             }
           }
           else{
@@ -116,17 +119,14 @@ if (strtolower($NewCheckWord[0]) == ".") { // 檢查是不是-開頭
           }
       }
       else {
-          if ($CheckWord[$i+1] == 'a' || $CheckWord[$i+1] == 'i' || $CheckWord[$i+1] == 'u' || $CheckWord[$i+1] == 'o' || $CheckWord[$i+1] == 'e') {
-              $Checkdesh = str_split($temp,1);
-              $n = strlen($temp) - 1;
-              $temp = $temp . '-' . $CheckWord[$i];
-          }
-          elseif ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
-              $temp = $temp . $CheckWord[$i] . '-';
-          }
-          else {
-              $temp = $temp . $CheckWord[$i];
-          }
+        if ($CheckWord[$i+1] == 'a' || $CheckWord[$i+1] == 'i' || $CheckWord[$i+1] == 'u' || $CheckWord[$i+1] == 'o' || $CheckWord[$i+1] == 'e') {
+            $Checkdesh = str_split($temp,1);
+            $n = strlen($temp) - 1;//這個宣告在幹嘛用的？？？？？
+            $temp = $temp . '-' . $CheckWord[$i];
+        }
+        else {
+            $temp = $temp . $CheckWord[$i];
+        }
       }
 
   }

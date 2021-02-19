@@ -92,7 +92,7 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
           }
           elseif ($i>0){//kuresangdalr & himiyanghing error != 改成 ==
             if ($CheckWord[$i+2] == 'a' || $CheckWord[$i+2] == 'i' || $CheckWord[$i+2] == 'u' || $CheckWord[$i+2] == 'o' || $CheckWord[$i+2] == 'e') {
-                $temp = $temp . '-x' .'ng' ;
+                $temp = $temp . '-' .'ng' ;
             }
             else{
                 $temp = $temp . '-' .'ng' ;
