@@ -22,7 +22,7 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
           }
           elseif ($i == $CheckLen-2) { //倒數最後第二個字是母音 直接合併最後一個字
               $temp = $temp . $CheckWord[$i] . $CheckWord[$i+1];
-              $i = $i + 1;
+              $i = $i + 1;//應該成break;
           }
           else {
               $temp = $temp . $CheckWord[$i];
@@ -81,8 +81,14 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
               $temp = $temp . 'ng';
           }
           elseif ($i == $CheckLen-4) { //ng 倒數第三 ex: maranger nger
+            if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e'){
+                $temp = $temp . 'ng' . '-' . $CheckWord[$i+2] . $CheckWord[$i+3] ;
+                break;
+            }
+            else{
               $temp = $temp . '-' . 'ng' . $CheckWord[$i+2] . $CheckWord[$i+3]; // 直接合併 ng + er
               break;
+            }
           }
           elseif ($i>0){
             if ($CheckWord[$i+2] != 'a' || $CheckWord[$i+2] != 'i' || $CheckWord[$i+2] != 'u' || $CheckWord[$i+2] != 'o' || $CheckWord[$i+2] != 'e') {
@@ -107,7 +113,7 @@ if (strtolower($NewCheckWord[0]) == "-") { // 檢查是不是-開頭
       else {
           if ($CheckWord[$i+1] == 'a' || $CheckWord[$i+1] == 'i' || $CheckWord[$i+1] == 'u' || $CheckWord[$i+1] == 'o' || $CheckWord[$i+1] == 'e') {
               $Checkdesh = str_split($temp,1);
-              $n = strlen($temp) - 1;
+              $n = strlen($temp) - 1;//這個宣告在幹嘛用的？？？？？
               $temp = $temp . '-' . $CheckWord[$i];
           }
           elseif ($CheckWord[$i-1] == 'a' || $CheckWord[$i-1] == 'i' || $CheckWord[$i-1] == 'u' || $CheckWord[$i-1] == 'o' || $CheckWord[$i-1] == 'e') {
