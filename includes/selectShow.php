@@ -63,7 +63,7 @@ if (true){
                 "contents"=> array(
                   array(
                     "type"=> "text",
-                    "text"=> $radical,
+                    "text"=> $ethnic,
                     "size"=> "3xl",
                     "align"=> "center",
                     "contents"=> array()
