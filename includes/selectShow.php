@@ -31,10 +31,12 @@ if (true){
     exit;
     }
     while($row = pg_fetch_row($ret)){
-    $ethnic = $row[0];
-    $chinese = $row[1];
-    $ethnic_sentence = $row[2];
-    $chinese_sentence = $row[3];
+
+
+    $chinese = $row[0];
+    $ethnic = $row[1];
+    $chinese_sentence = $row[2];
+    $ethnic_sentence = $row[3];
     $radical = $row[4];
     }
     echo "Operation done successfully";
