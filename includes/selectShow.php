@@ -91,6 +91,7 @@ if (true){
                         "text"=> $chinese,
                         "size"=> "xl",
                         "align"=> "start",
+                        "wrap"=> true,
                         "contents"=> array()
                       )
                     )
